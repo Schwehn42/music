@@ -24,7 +24,10 @@ public class TestMain {
 		System.out.println(shift2);
 		
 		
-		System.out.println(new Note(Tone.Cis, Mode.MAJOR).shift(Interval.FIFTH_PERFECT, false));
+		System.out.println(new Note(Tone.H, Mode.MAJOR).shift(Interval.SECOND_MINOR, false));
+		
+		System.out.println(new Note(Tone.D, Mode.MAJOR).shift(Interval.SIXTH_MAJOR, true));
+		System.out.println(new Note(Tone.B, Mode.MAJOR).shift(Interval.THIRD_MAJOR, true));
 	}
 
 }

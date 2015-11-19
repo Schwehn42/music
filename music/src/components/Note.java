@@ -58,16 +58,44 @@ public class Note implements Shift{
 		if (!shiftDown) { //Shift up
 			int notePos = this.getPosInToneSeries();
 			int intervalStep = interval.getStep();
-//			System.out.println(notePos + " + " + intervalStep + " --> " + (notePos + intervalStep));
-//			System.out.println(NoteSeries.SEMITONESERIES.getSeriesComponents().get(notePos + intervalStep).getIndex());
-			Tone shiftedTone = NoteSeries.SEMITONESERIES.getASeriesComponentByIndex(notePos + intervalStep).getTone();
-			Note retNote = new Note(shiftedTone, this.getMode());
-			
-			return retNote;
+			System.out.println(notePos + intervalStep);
+			if (notePos + intervalStep > 12) {
+				/* out of bounds
+				 * transform downwards
+				 * and add an octave to the new note
+				 */
+				Tone shiftedTone = NoteSeries.SEMITONESERIES.getASeriesComponentByIndex(notePos - intervalStep).getTone();
+				Note retNote = new Note(shiftedTone, this.getMode(), this.getOctave() + 1);
+				
+				return retNote;
+			}
+			else {
+				Tone shiftedTone = NoteSeries.SEMITONESERIES.getASeriesComponentByIndex(notePos + intervalStep).getTone();
+				Note retNote = new Note(shiftedTone, this.getMode());
+				
+				return retNote;
+			}
 		}
 		else { //Shift down
-			
+			int notePos = this.getPosInToneSeries();
+			int intervalStep = interval.getStep();
+			System.out.println(notePos + intervalStep);
+			if (notePos - intervalStep < 0) {
+				/* out of bounds
+				 * transform upwards
+				 * and remove an octave to the new note
+				 */
+				Tone shiftedTone = NoteSeries.SEMITONESERIES.getASeriesComponentByIndex(notePos + 12 - intervalStep).getTone();
+				Note retNote = new Note(shiftedTone, this.getMode(), this.getOctave() - 1);
+				
+				return retNote;
+			}
+			else {
+				Tone shiftedTone = NoteSeries.SEMITONESERIES.getASeriesComponentByIndex(notePos - intervalStep).getTone();
+				Note retNote = new Note(shiftedTone, this.getMode());
+				
+				return retNote;
+			}
 		}
-		return null;
 	}
 }
