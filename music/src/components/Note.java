@@ -50,7 +50,7 @@ public class Note implements Shift{
 			if (nsc.getTone() == tone)
 				return nsc.getIndex();
 		}
-		return -1;
+		throw new IllegalArgumentException("Tone doesn't exist?");
 	}
 
 	public Note shift(Interval interval, boolean shiftDown) {
