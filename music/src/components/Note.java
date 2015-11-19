@@ -54,7 +54,6 @@ public class Note implements Shift{
 	}
 
 	public Note shift(Interval interval, boolean shiftDown) {
-
 		if (!shiftDown) { //Shift up
 			int notePos = this.getPosInToneSeries();
 			int intervalStep = interval.getStep();
@@ -98,4 +97,5 @@ public class Note implements Shift{
 			}
 		}
 	}
+	
 }
