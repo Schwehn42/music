@@ -54,6 +54,10 @@ public class Note implements Shift{
 	}
 
 	public Note shift(Interval interval, boolean shiftDown) {
+		/*
+		 * interval: what interval the note is shifted
+		 * shiftDown: false -> note is shifted up; true -> note is shifted down
+		 */
 		if (!shiftDown) { //Shift up
 			int notePos = this.getPosInToneSeries();
 			int intervalStep = interval.getStep();
