@@ -1,5 +1,11 @@
 package components;
 
 public enum Tone {
-	C, D, E, F, G, A, H
+	C, Cis, Ces,
+	D, Dis, Des,
+	E, Eis, Es,
+	F, Fis, Fes,
+	G, Gis, Ges,
+	A, Ais, Ases,
+	H, His, B
 }

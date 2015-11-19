@@ -28,4 +28,10 @@ public class Note {
 	public int getOctave() {
 		return this.octave;
 	}
+	
+	//other methods
+	@Override
+	public String toString() {
+		return this.mode + " " + this.tone + "(" + this.octave + ")";
+	}
 }
