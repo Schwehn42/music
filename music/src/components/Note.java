@@ -63,7 +63,7 @@ public class Note implements Shift{
 				 * transform downwards
 				 * and add an octave to the new note
 				 */
-				Tone shiftedTone = NoteSeries.SEMITONESERIES.getASeriesComponentByIndex(notePos - intervalStep).getTone();
+				Tone shiftedTone = NoteSeries.SEMITONESERIES.getASeriesComponentByIndex(notePos - 12 + intervalStep).getTone();
 				Note retNote = new Note(shiftedTone, this.getMode(), this.getOctave() + 1);
 				
 				return retNote;

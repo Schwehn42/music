@@ -19,22 +19,7 @@ public class TestMain {
 		
 		
 		Note e = new Note(Tone.E, Mode.MINOR); //Minor E
-		System.out.println(e);
-		
-		Note shift2 = e.shift(Interval.SECOND_MINOR, false);
-		System.out.println(shift2);
-		
-		
-		System.out.println(new Note(Tone.H, Mode.MAJOR).shift(Interval.SECOND_MINOR, false));
-		
-		System.out.println(new Note(Tone.D, Mode.MAJOR).shift(Interval.SIXTH_MAJOR, true));
-		System.out.println(new Note(Tone.B, Mode.MAJOR).shift(Interval.THIRD_MAJOR, true));
-		
-		Triad t1 = new Triad(a, Mode.MAJOR);
-		System.out.println(t1);
-		
-		Triad t2 = new Triad(e, Mode.MINOR);
-		System.out.println(t2);
+		System.out.println(e + " " + e.shift(Interval.OCTAVE_PERFECT, false));
 	}
 
 }

@@ -26,6 +26,21 @@ public class Triad {
 		}
 	}
 	
+	public void transform(String transformTo) {
+		Note tempNote1 = this.notes[0];
+		Note tempNote2 = this.notes[1];
+		Note tempNote3 = this.notes[2];
+		
+		if (transformTo.equals("6") && this.position.equals("BASE")) {
+			this.notes[0] = this.notes[1];
+			this.notes[1] = this.notes[2];
+			this.notes[2] = tempNote1.shift(Interval.OCTAVE_PERFECT, false);
+		}
+	}
+	public Triad transform(String transformTo, boolean doReturn) {
+		return null;
+	}
+	
 	public Note[] getNotes() {
 		return this.notes;
 	}
