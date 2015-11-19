@@ -20,6 +20,10 @@ public class TestMain {
 		
 		Note e = new Note(Tone.E, Mode.MINOR); //Minor E
 		System.out.println(e + " " + e.shift(Interval.OCTAVE_PERFECT, false));
+		
+		Triad t1 = new Triad(e, Mode.MAJOR);
+		System.out.println(t1);
+		System.out.println(t1.transform("6"));
 	}
 
 }
